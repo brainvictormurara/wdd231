@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Marondera Agri Supply",
+        "address": "12 Main Street, Marondera",
+        "phone": "+263 77 123 4501",
+        "website": "https://www.maronderaagri.co.zw",
+        "image": "images/agri-supply.webp",
+        "membership": 3,
+        "description": "Supplier of agricultural equipment, seeds, fertilizers, and farming solutions."
+    },
+    {
+        "name": "Green Harvest Market",
+        "address": "45 Market Road, Marondera",
+        "phone": "+263 77 123 4502",
+        "website": "https://www.greenharvest.co.zw",
+        "image": "images/green-harvest.webp",
+        "membership": 2,
+        "description": "Fresh vegetables, fruits, and locally sourced farm produce."
+    },
+    {
+        "name": "Marondera Hardware Centre",
+        "address": "8 Industrial Avenue, Marondera",
+        "phone": "+263 77 123 4503",
+        "website": "https://www.marondererahardware.co.zw",
+        "image": "images/marondera-hardware.webp",
+        "membership": 3,
+        "description": "Construction materials, power tools, plumbing, and electrical supplies."
+    },
+    {
+        "name": "Sunrise Bakery",
+        "address": "21 Baker Street, Marondera",
+        "phone": "+263 77 123 4504",
+        "website": "https://www.sunrisebakery.co.zw",
+        "image": "images/sunrise-bakery.webp",
+        "membership": 1,
+        "description": "Fresh bread, cakes, pastries, and catering services."
+    },
+    {
+        "name": "City Pharmacy",
+        "address": "16 Health Avenue, Marondera",
+        "phone": "+263 77 123 4505",
+        "website": "https://www.city-pharmacy.co.zw",
+        "image": "images/city-pharmacy.webp",
+        "membership": 2,
+        "description": "Prescription medicines, health products, and professional pharmaceutical services."
+    },
+    {
+        "name": "Elite Transport Services",
+        "address": "5 Transport Way, Marondera",
+        "phone": "+263 77 123 4506",
+        "website": "https://www.elitetransport.co.zw",
+        "image": "images/elite-transport.webp",
+        "membership": 3,
+        "description": "Reliable cargo, logistics, and freight transportation services."
+    },
+    {
+        "name": "Smart Tech Solutions",
+        "address": "30 Enterprise Road, Marondera",
+        "phone": "+263 77 123 4507",
+        "website": "https://www.smarttech.co.zw",
+        "image": "images/smart-tech.webp",
+        "membership": 2,
+        "description": "Computer sales, repairs, networking, and IT consulting services."
+    }
+]

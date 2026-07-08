@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marondera Chamber of Commerce Directory</title>
+    <meta name="description" content="Marondera Chamber of Commerce business directory featuring local companies, services, and member organizations.">
+    <meta name="author" content="Brain Victor Murara">
+
+    <meta property="og:title" content="Marondera Chamber of Commerce Directory">
+    <meta property="og:description" content="Explore local businesses and chamber members in Marondera, Zimbabwe.">
+    <meta property="og:image" content="https://BrainVictorMurara.github.io/wdd231/chamber/images/fb-image.webp">
+    <meta property="og:url" content="https://BrainVictorMurara.github.io/wdd231/chamber/directory.html">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <img src="images/logo.webp" alt="Marondera Chamber of Commerce logo" width="50" height="50">
+            <span>Marondera Chamber of Commerce</span>
+        </div>
+
+        <button id="menu-button" aria-label="Open navigation menu"></button>
+
+        <nav id="navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html" class="active">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="discover.html">Discover</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Directory</h1>
+
+        <div class="view-buttons">
+            <button id="grid-view" class="active-view">Grid</button>
+            <button id="list-view">List</button>
+        </div>
+
+        <section id="members" class="grid-view" aria-label="Business directory"></section>
+    </main>
+
+    <footer>
+        <section>
+            <h2>Marondera Chamber of Commerce</h2>
+            <p>123 First Street</p>
+            <p>Marondera, Zimbabwe</p>
+            <p>info@maronderachamber.org</p>
+            <p>+263 77 123 4567</p>
+        </section>
+
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="images/facebook.svg" alt="Facebook icon" width="32" height="32">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn icon" width="32" height="32">
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub icon" width="32" height="32">
+            </a>
+        </div>
+
+        <section>
+            <p>WDD 231 Class Project</p>
+            <p>Brain Victor Murara</p>
+            <p>&copy; <span id="currentyear"></span> Marondera Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastmodified"></span></p>
+        </section>
+    </footer>
+
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+</body>
+</html>
