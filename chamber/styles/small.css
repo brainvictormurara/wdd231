@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     background: var(--background);
     color: var(--primary);
     line-height: 1.5;
@@ -80,7 +80,7 @@ header {
 #navigation a:hover,
 #navigation .active {
     background: var(--secondary);
-    color: var(--primary);
+    color: #000;
     font-weight: 700;
 }
 
@@ -114,7 +114,7 @@ h1 {
 .view-buttons button:hover,
 .view-buttons .active-view {
     background: var(--secondary);
-    color: var(--primary);
+    color: #000;
 }
 
 .grid-view {
@@ -167,21 +167,23 @@ h1 {
     color: var(--primary);
     font-weight: 700;
 }
+
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-view .card {
+    padding-bottom: 0.75rem;
+}
+
 .list-view .card img {
     display: none;
 }
 
 .list-view .card-body {
     display: block;
-}
-
-.list-view .card {
-    padding-bottom: 0.75rem;
-}
-.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 footer {
