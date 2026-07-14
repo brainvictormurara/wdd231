@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marondera Chamber of Commerce Home</title>
+
+    <meta
+        name="description"
+        content="Discover Marondera businesses, community events, local weather, and chamber member spotlights."
+    >
+    <meta name="author" content="Brain Victor Murara">
+
+    <meta property="og:title" content="Marondera Chamber of Commerce Home">
+    <meta property="og:type" content="website">
+    <meta
+        property="og:description"
+        content="Connect with Marondera businesses, community events, and chamber members."
+    >
+    <meta
+        property="og:image"
+        content="https://brainvictormurara.github.io/wdd231/chamber/images/fb-image.webp"
+    >
+    <meta
+        property="og:url"
+        content="https://brainvictormurara.github.io/wdd231/chamber/index.html"
+    >
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <img
+                src="images/logo.webp"
+                alt="Marondera Chamber of Commerce logo"
+                width="50"
+                height="50"
+            >
+            <span>Marondera Chamber of Commerce</span>
+        </div>
+
+        <button
+            id="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        ></button>
+
+        <nav id="navigation">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="join.html">Join</a>
+    <a href="discover.html" class="active">Discover</a>
+</nav>
+    </header>
+
+    <main class="home-main">
+        <h1>Discover Marondera</h1>
+
+        <section class="hero">
+            <img
+                src="images/fb-image.webp"
+                alt="View of Marondera and the Chamber of Commerce"
+                width="1200"
+                height="630"
+            >
+
+            <div class="hero-content">
+                <h2>Connect. Support. Grow.</h2>
+                <p>
+                    Supporting local businesses and building a stronger
+                    Marondera community.
+                </p>
+                <a class="join-button" href="join.html">Join the Chamber</a>
+            </div>
+        </section>
+
+        <div class="home-information">
+            <section class="events">
+                <h2>Current Events</h2>
+
+                <article>
+                    <h3>Marondera Business Networking Breakfast</h3>
+                    <p><strong>Date:</strong> 25 July 2026</p>
+                    <p><strong>Time:</strong> 8:00 a.m.</p>
+                    <p><strong>Venue:</strong> Marondera Hotel</p>
+                    <p>
+                        Meet local business owners, exchange ideas, and build
+                        valuable partnerships.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Community Development Workshop</h3>
+                    <p><strong>Date:</strong> 1 August 2026</p>
+                    <p><strong>Time:</strong> 10:00 a.m.</p>
+                    <p><strong>Venue:</strong> Marondera Civic Centre</p>
+                    <p>
+                        Learn about business growth, community development,
+                        and local investment opportunities.
+                    </p>
+                </article>
+            </section>
+
+            <section class="weather">
+                <h2>Marondera Weather</h2>
+<div class="current-weather">
+    <img
+        id="weather-icon"
+        alt="Current weather"
+        width="80"
+        height="80"
+    >
+
+    <div>
+        <p>
+            <strong>Temperature:</strong>
+            <span id="current-temp">Loading...</span>
+        </p>
+
+        <p>
+            <strong>Conditions:</strong>
+            <span id="weather-description">Loading...</span>
+        </p>
+    </div>
+</div>
+
+                <div class="forecast">
+                    <h3>Three-Day Forecast</h3>
+
+                    <div id="forecast-container">
+                        <p>Loading weather forecast...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="spotlights-section">
+            <h2>Member Spotlights</h2>
+
+            <div
+                id="spotlights"
+                class="spotlights"
+                aria-label="Featured chamber members"
+            >
+                <p>Loading chamber member spotlights...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h2>Marondera Chamber of Commerce</h2>
+            <p>123 First Street</p>
+            <p>Marondera, Zimbabwe</p>
+            <p>info@maronderachamber.org</p>
+            <p>+263 77 123 4567</p>
+        </section>
+
+        <div class="social">
+            <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+            >
+                <img
+                    src="images/facebook.svg"
+                    alt="Facebook icon"
+                    width="32"
+                    height="32"
+                >
+            </a>
+
+            <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+            >
+                <img
+                    src="images/linkedin.svg"
+                    alt="LinkedIn icon"
+                    width="32"
+                    height="32"
+                >
+            </a>
+
+            <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+            >
+                <img
+                    src="images/github.svg"
+                    alt="GitHub icon"
+                    width="32"
+                    height="32"
+                >
+            </a>
+        </div>
+
+        <section>
+            <p>WDD 231 Class Project</p>
+            <p>Brain Victor Murara</p>
+            <p>Marondera, Zimbabwe</p>
+            <p>
+                &copy;
+                <span id="currentyear"></span>
+                Marondera Chamber of Commerce
+            </p>
+            <p>
+                Last Modification:
+                <span id="lastmodified"></span>
+            </p>
+        </section>
+    </footer>
+</body>
+</html>a

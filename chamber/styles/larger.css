@@ -110,5 +110,42 @@
 
     .social {
         margin: 0;
+        /* HOME PAGE */
+
+.home-main {
+    padding: 2rem;
+}
+
+.home-main > h1 {
+    text-align: left;
+}
+
+.hero > img {
+    height: 420px;
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+}
+
+.home-information {
+    grid-template-columns: 2fr 1fr;
+}
+
+#forecast-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.spotlights {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.spotlight-card {
+    min-height: 330px;
+}
     }
 }
