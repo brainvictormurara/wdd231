@@ -347,9 +347,7 @@ footer p {
     object-fit: contain;
 }
 
-#weather-icon:not([src]) {
-    display: none;
-}
+
 
 .current-weather p {
     margin-bottom: 0.3rem;

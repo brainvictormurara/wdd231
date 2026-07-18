@@ -22,7 +22,7 @@ menuButton.addEventListener("click", () => {
         isOpen ? "Close navigation menu" : "Open navigation menu"
     );
 
-    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
 // ===============================
@@ -50,8 +50,16 @@ async function getWeather() {
             fetch(forecastUrl)
         ]);
 
-        if (!currentResponse.ok || !forecastResponse.ok) {
-            throw new Error("Weather information could not be loaded.");
+        if (!currentResponse.ok) {
+            throw new Error(
+                `Current weather request failed: ${currentResponse.status}`
+            );
+        }
+
+        if (!forecastResponse.ok) {
+            throw new Error(
+                `Forecast request failed: ${forecastResponse.status}`
+            );
         }
 
         const currentData = await currentResponse.json();
@@ -59,23 +67,21 @@ async function getWeather() {
 
         displayCurrentWeather(currentData);
         displayForecast(forecastData);
-
     } catch (error) {
-
         currentTemp.textContent = "Unavailable";
-        weatherDescription.textContent = "Weather information unavailable";
+        weatherDescription.textContent =
+            "Weather information unavailable";
 
         forecastContainer.innerHTML =
             "<p>The weather forecast could not be loaded.</p>";
 
         weatherIcon.hidden = true;
 
-        console.error(error);
+        console.error("Weather error:", error);
     }
 }
 
 function displayCurrentWeather(data) {
-
     const temperature = Math.round(data.main.temp);
     const description = data.weather[0].description;
     const iconCode = data.weather[0].icon;
@@ -86,41 +92,57 @@ function displayCurrentWeather(data) {
     weatherIcon.src =
         `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
-    weatherIcon.alt = description;
+    weatherIcon.alt =
+        `${capitalizeWords(description)} weather icon`;
+
     weatherIcon.hidden = false;
 }
 
 function displayForecast(data) {
-
     forecastContainer.innerHTML = "";
 
-    const dailyForecasts = data.list.filter(item =>
+    const middayForecasts = data.list.filter((item) =>
         item.dt_txt.includes("12:00:00")
     );
 
-    dailyForecasts.slice(0, 3).forEach(day => {
+    const nextThreeDays = middayForecasts.slice(0, 3);
 
-        const date = new Date(day.dt_txt);
+    if (nextThreeDays.length === 0) {
+        forecastContainer.innerHTML =
+            "<p>No forecast information is currently available.</p>";
+        return;
+    }
+
+    nextThreeDays.forEach((day) => {
+        const date = new Date(day.dt * 1000);
 
         const forecastCard = document.createElement("article");
         forecastCard.classList.add("forecast-day");
 
-        forecastCard.innerHTML = `
-            <h4>${date.toLocaleDateString("en-US", {
-                weekday: "long"
-            })}</h4>
+        const heading = document.createElement("h4");
+        heading.textContent = date.toLocaleDateString("en-US", {
+            weekday: "long"
+        });
 
-            <p><strong>${Math.round(day.main.temp)}°C</strong></p>
+        const temperature = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = `${Math.round(day.main.temp)}°C`;
+        temperature.appendChild(strong);
 
-            <p>${capitalizeWords(day.weather[0].description)}</p>
-        `;
+        const description = document.createElement("p");
+        description.textContent =
+            capitalizeWords(day.weather[0].description);
+
+        forecastCard.appendChild(heading);
+        forecastCard.appendChild(temperature);
+        forecastCard.appendChild(description);
 
         forecastContainer.appendChild(forecastCard);
     });
 }
 
 function capitalizeWords(text) {
-    return text.replace(/\b\w/g, letter => letter.toUpperCase());
+    return text.replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 // ===============================
@@ -128,91 +150,128 @@ function capitalizeWords(text) {
 // ===============================
 
 async function getSpotlights() {
-
     try {
-
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error("Unable to load member information.");
+            throw new Error(
+                `Member request failed: ${response.status}`
+            );
         }
 
         const members = await response.json();
 
-        const qualifiedMembers = members.filter(member =>
-            member.membership === 2 || member.membership === 3
+        const qualifiedMembers = members.filter(
+            (member) =>
+                member.membership === 2 ||
+                member.membership === 3
         );
 
-        const randomMembers = shuffleMembers(qualifiedMembers).slice(0, 3);
+        const numberToDisplay = Math.min(
+            3,
+            qualifiedMembers.length
+        );
+
+        const randomMembers = shuffleMembers(
+            qualifiedMembers
+        ).slice(0, numberToDisplay);
 
         displaySpotlights(randomMembers);
-
     } catch (error) {
-
         spotlightsContainer.innerHTML =
-            "<p>Unable to load chamber spotlights.</p>";
+            "<p>Unable to load chamber member spotlights.</p>";
 
-        console.error(error);
+        console.error("Spotlight error:", error);
     }
 }
 
 function shuffleMembers(array) {
-
     const shuffled = [...array];
 
-    for (let i = shuffled.length - 1; i > 0; i--) {
-
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
 
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        [shuffled[i], shuffled[j]] =
+            [shuffled[j], shuffled[i]];
     }
 
     return shuffled;
 }
 
 function displaySpotlights(members) {
-
     spotlightsContainer.innerHTML = "";
 
-    members.forEach(member => {
+    if (members.length === 0) {
+        spotlightsContainer.innerHTML =
+            "<p>No qualified member spotlights are available.</p>";
+        return;
+    }
 
-        const card = document.createElement("section");
+    members.forEach((member) => {
+        const card = document.createElement("article");
         card.classList.add("spotlight-card");
 
-        card.innerHTML = `
-            <h3>${member.name}</h3>
+        const heading = document.createElement("h3");
+        heading.textContent = member.name;
 
-            <img
-                src="${member.image}"
-                alt="${member.name}"
-                loading="lazy"
-                width="150"
-                height="100"
-            >
+        const image = document.createElement("img");
+        image.src = member.image;
+        image.alt = `${member.name} business`;
+        image.loading = "lazy";
+        image.width = 150;
+        image.height = 100;
 
-            <p><strong>Address:</strong> ${member.address}</p>
+        const address = createInformationParagraph(
+            "Address:",
+            member.address
+        );
 
-            <p><strong>Phone:</strong> ${member.phone}</p>
+        const phone = createInformationParagraph(
+            "Phone:",
+            member.phone
+        );
 
-            <p><strong>Membership:</strong> ${membershipLevel(member.membership)}</p>
+        const membership = createInformationParagraph(
+            "Membership:",
+            membershipLevel(member.membership)
+        );
 
-            <a
-                href="${member.website}"
-                target="_blank"
-                rel="noopener"
-            >
-                Visit Website
-            </a>
-        `;
+        const website = document.createElement("a");
+        website.href = member.website;
+        website.target = "_blank";
+        website.rel = "noopener";
+        website.textContent = "Visit Website";
+
+        card.appendChild(heading);
+        card.appendChild(image);
+        card.appendChild(address);
+        card.appendChild(phone);
+        card.appendChild(membership);
+        card.appendChild(website);
 
         spotlightsContainer.appendChild(card);
     });
 }
 
-function membershipLevel(level) {
+function createInformationParagraph(label, value) {
+    const paragraph = document.createElement("p");
+    const strong = document.createElement("strong");
 
-    if (level === 3) return "Gold";
-    if (level === 2) return "Silver";
+    strong.textContent = `${label} `;
+    paragraph.appendChild(strong);
+    paragraph.appendChild(document.createTextNode(value));
+
+    return paragraph;
+}
+
+function membershipLevel(level) {
+    if (level === 3) {
+        return "Gold";
+    }
+
+    if (level === 2) {
+        return "Silver";
+    }
 
     return "Member";
 }
