@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Marondera Chamber of Commerce Home</title>
+    <title>Join | Marondera Chamber of Commerce</title>
 
     <meta
         name="description"
-        content="Discover Marondera businesses, community events, local weather, and chamber member spotlights."
+        content="Apply to join the Marondera Chamber of Commerce and select a membership level for your organization."
     >
     <meta name="author" content="Brain Victor Murara">
 
-    <meta property="og:title" content="Marondera Chamber of Commerce Home">
+    <meta property="og:title" content="Join the Marondera Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta
         property="og:description"
-        content="Connect with Marondera businesses, community events, and chamber members."
+        content="Become a member of the Marondera Chamber of Commerce and connect with the local business community."
     >
     <meta
         property="og:image"
@@ -24,13 +24,14 @@
     >
     <meta
         property="og:url"
-        content="https://brainvictormurara.github.io/wdd231/chamber/index.html"
+        content="https://brainvictormurara.github.io/wdd231/chamber/join.html"
     >
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
         rel="stylesheet"
@@ -41,7 +42,7 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/dates.js" defer></script>
-    <script src="scripts/home.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
@@ -63,106 +64,233 @@
             aria-expanded="false"
         ></button>
 
-       <nav id="navigation">
-    <a href="index.html">Home</a>
-    <a href="directory.html">Directory</a>
-    <a href="join.html" class="active">Join</a>
-    <a href="discover.html">Discover</a>
-</nav>
+        <nav id="navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html" class="active">Join</a>
+            <a href="discover.html">Discover</a>
+        </nav>
     </header>
 
-    <main class="home-main">
-       <h1>Join the Chamber</h1>
+    <main class="join-main">
+        <h1>Join the Chamber</h1>
 
-        <section class="hero">
-            <img
-                src="images/fb-image.webp"
-                alt="View of Marondera and the Chamber of Commerce"
-                width="1200"
-                height="630"
-            >
+        <div class="join-layout">
+            <section class="application-section">
+                <h2>Membership Application</h2>
 
-            <div class="hero-content">
-                <h2>Connect. Support. Grow.</h2>
-                <p>
-                    Supporting local businesses and building a stronger
-                    Marondera community.
-                </p>
-                <a class="join-button" href="join.html">Join the Chamber</a>
-            </div>
-        </section>
+                <form
+                    class="membership-form"
+                    method="get"
+                    action="thankyou.html"
+                >
+                    <label>
+                        First Name
+                        <input
+                            type="text"
+                            name="firstName"
+                            title="Enter your first name"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </label>
 
-        <div class="home-information">
-            <section class="events">
-                <h2>Current Events</h2>
+                    <label>
+                        Last Name
+                        <input
+                            type="text"
+                            name="lastName"
+                            title="Enter your last name"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </label>
 
-                <article>
-                    <h3>Marondera Business Networking Breakfast</h3>
-                    <p><strong>Date:</strong> 25 July 2026</p>
-                    <p><strong>Time:</strong> 8:00 a.m.</p>
-                    <p><strong>Venue:</strong> Marondera Hotel</p>
-                    <p>
-                        Meet local business owners, exchange ideas, and build
-                        valuable partnerships.
-                    </p>
-                </article>
+                    <label>
+                        Organizational Title
+                        <input
+                            type="text"
+                            name="organizationTitle"
+                            title="Enter your organizational title using at least seven letters, spaces, or hyphens"
+                            autocomplete="organization-title"
+                            pattern="[A-Za-z\s-]{7,}"
+                        >
+                    </label>
 
-                <article>
-                    <h3>Community Development Workshop</h3>
-                    <p><strong>Date:</strong> 1 August 2026</p>
-                    <p><strong>Time:</strong> 10:00 a.m.</p>
-                    <p><strong>Venue:</strong> Marondera Civic Centre</p>
-                    <p>
-                        Learn about business growth, community development,
-                        and local investment opportunities.
-                    </p>
-                </article>
+                    <label>
+                        Email Address
+                        <input
+                            type="email"
+                            name="email"
+                            title="Enter your email address"
+                            autocomplete="email"
+                            placeholder="name@example.com"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Mobile Phone Number
+                        <input
+                            type="tel"
+                            name="phone"
+                            title="Enter your mobile phone number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Business or Organization Name
+                        <input
+                            type="text"
+                            name="organization"
+                            title="Enter the name of your business or organization"
+                            autocomplete="organization"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Membership Level
+                        <select
+                            name="membership"
+                            title="Select a membership level"
+                            required
+                        >
+                            <option value="">Select a membership level</option>
+                            <option value="np">NP Membership</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Business or Organization Description
+                        <textarea
+                            name="description"
+                            title="Describe your business or organization"
+                            rows="6"
+                        ></textarea>
+                    </label>
+
+                    <input
+                        type="hidden"
+                        name="timestamp"
+                        id="timestamp"
+                    >
+
+                    <button type="submit">
+                        Apply for Membership
+                    </button>
+                </form>
             </section>
 
-            <section class="weather">
-                <h2>Marondera Weather</h2>
-<div class="current-weather">
-    <img
-        id="weather-icon"
-        alt="Current weather"
-        width="80"
-        height="80"
-    >
+            <section class="membership-section">
+                <h2>Membership Levels</h2>
 
-    <div>
-        <p>
-            <strong>Temperature:</strong>
-            <span id="current-temp">Loading...</span>
-        </p>
+                <div class="membership-cards">
+                    <article class="membership-card">
+                        <h3>NP Membership</h3>
+                        <p>For nonprofit organizations.</p>
+                        <p class="membership-price">No fee</p>
+                        <button
+                            type="button"
+                            class="modal-button"
+                            data-modal="np-modal"
+                        >
+                            View Benefits
+                        </button>
+                    </article>
 
-        <p>
-            <strong>Conditions:</strong>
-            <span id="weather-description">Loading...</span>
-        </p>
-    </div>
-</div>
+                    <article class="membership-card">
+                        <h3>Bronze Membership</h3>
+                        <p>Essential support for small businesses.</p>
+                        <p class="membership-price">Entry level</p>
+                        <button
+                            type="button"
+                            class="modal-button"
+                            data-modal="bronze-modal"
+                        >
+                            View Benefits
+                        </button>
+                    </article>
 
-                <div class="forecast">
-                    <h3>Three-Day Forecast</h3>
+                    <article class="membership-card">
+                        <h3>Silver Membership</h3>
+                        <p>Additional promotion and training benefits.</p>
+                        <p class="membership-price">Professional level</p>
+                        <button
+                            type="button"
+                            class="modal-button"
+                            data-modal="silver-modal"
+                        >
+                            View Benefits
+                        </button>
+                    </article>
 
-                    <div id="forecast-container">
-                        <p>Loading weather forecast...</p>
-                    </div>
+                    <article class="membership-card">
+                        <h3>Gold Membership</h3>
+                        <p>Maximum visibility and premium benefits.</p>
+                        <p class="membership-price">Premium level</p>
+                        <button
+                            type="button"
+                            class="modal-button"
+                            data-modal="gold-modal"
+                        >
+                            View Benefits
+                        </button>
+                    </article>
                 </div>
             </section>
         </div>
 
-        <section class="spotlights-section">
-            <h2>Member Spotlights</h2>
+        <dialog id="np-modal">
+            <h2>NP Membership Benefits</h2>
+            <ul>
+                <li>No membership fee</li>
+                <li>Access to networking events</li>
+                <li>Community organization directory listing</li>
+                <li>Training and development information</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
 
-            <div
-                id="spotlights"
-                class="spotlights"
-                aria-label="Featured chamber members"
-            >
-                <p>Loading chamber member spotlights...</p>
-            </div>
-        </section>
+        <dialog id="bronze-modal">
+            <h2>Bronze Membership Benefits</h2>
+            <ul>
+                <li>Business directory listing</li>
+                <li>Access to chamber networking events</li>
+                <li>Member training opportunities</li>
+                <li>Discounts on selected chamber events</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="silver-modal">
+            <h2>Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze membership benefits</li>
+                <li>Priority access to training workshops</li>
+                <li>Enhanced business directory listing</li>
+                <li>Discounted advertising opportunities</li>
+                <li>Occasional homepage spotlight placement</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="gold-modal">
+            <h2>Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver membership benefits</li>
+                <li>Premium business directory listing</li>
+                <li>Priority homepage spotlight placement</li>
+                <li>Major event sponsorship opportunities</li>
+                <li>Maximum event and training discounts</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
     </main>
 
     <footer>
@@ -218,20 +346,22 @@
             </a>
         </div>
 
-        <section>
+        <div class="footer-info">
             <p>WDD 231 Class Project</p>
             <p>Brain Victor Murara</p>
             <p>Marondera, Zimbabwe</p>
+
             <p>
                 &copy;
                 <span id="currentyear"></span>
                 Marondera Chamber of Commerce
             </p>
+
             <p>
                 Last Modification:
                 <span id="lastmodified"></span>
             </p>
-        </section>
+        </div>
     </footer>
 </body>
-</html>a
+</html>

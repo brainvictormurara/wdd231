@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | Marondera Chamber of Commerce</title>
+
+    <meta
+        name="description"
+        content="Thank you for applying to join the Marondera Chamber of Commerce."
+    >
+    <meta name="author" content="Brain Victor Murara">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+    
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <img
+            src="images/logo.webp"
+            alt="Marondera Chamber of Commerce logo"
+            width="50"
+            height="50"
+        >
+        <span>Marondera Chamber of Commerce</span>
+    </div>
+
+    <button
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    ></button>
+
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+    </nav>
+</header>
+
+<main class="thankyou-main">
+
+    <h1>Thank You!</h1>
+
+    <p>
+        Thank you for applying to become a member of the
+        Marondera Chamber of Commerce.
+        Your application has been successfully received.
+    </p>
+
+    <section class="submission-details">
+
+        <h2>Your Submitted Information</h2>
+
+        <p><strong>First Name:</strong> <span id="firstName"></span></p>
+
+        <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+
+        <p><strong>Email:</strong> <span id="email"></span></p>
+
+        <p><strong>Mobile Phone:</strong> <span id="phone"></span></p>
+
+        <p><strong>Business/Organization:</strong> <span id="organization"></span></p>
+
+        <p><strong>Date Submitted:</strong> <span id="timestampDisplay"></span></p>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <section>
+        <h2>Marondera Chamber of Commerce</h2>
+        <p>123 First Street</p>
+        <p>Marondera, Zimbabwe</p>
+        <p>info@maronderachamber.org</p>
+        <p>+263 77 123 4567</p>
+    </section>
+
+    <div class="social">
+
+        <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+        >
+            <img
+                src="images/facebook.svg"
+                alt="Facebook icon"
+                width="32"
+                height="32"
+            >
+        </a>
+
+        <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+        >
+            <img
+                src="images/linkedin.svg"
+                alt="LinkedIn icon"
+                width="32"
+                height="32"
+            >
+        </a>
+
+        <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+        >
+            <img
+                src="images/github.svg"
+                alt="GitHub icon"
+                width="32"
+                height="32"
+            >
+        </a>
+
+    </div>
+
+    <div class="footer-info">
+
+        <p>WDD 231 Class Project</p>
+
+        <p>Brain Victor Murara</p>
+
+        <p>Marondera, Zimbabwe</p>
+
+        <p>
+            &copy;
+            <span id="currentyear"></span>
+            Marondera Chamber of Commerce
+        </p>
+
+        <p>
+            Last Modification:
+            <span id="lastmodified"></span>
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
