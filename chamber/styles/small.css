@@ -1,29 +1,34 @@
 :root {
     --primary: #1f4e3d;
+    --primary-dark: #16392d;
     --secondary: #d4a017;
     --background: #f5f5f5;
+    --surface: #ffffff;
+    --text: #000000;
+    --border: #777777;
+    --danger: #9c1c1c;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--primary);
     line-height: 1.5;
 }
 
 header {
-    background: var(--primary);
-    color: white;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--surface);
 }
 
 .brand {
@@ -43,9 +48,9 @@ header {
 }
 
 #menu-button {
-    background: none;
     border: none;
-    color: white;
+    background-color: transparent;
+    color: var(--surface);
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -58,10 +63,15 @@ header {
     content: "✕";
 }
 
+#menu-button:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
 #navigation {
     display: none;
     grid-column: 1 / 3;
-    background: var(--primary);
+    background-color: var(--primary);
 }
 
 #navigation.open {
@@ -70,17 +80,18 @@ header {
 
 #navigation a {
     display: block;
-    color: white;
+    padding: 0.9rem;
+    border-top: 1px solid var(--surface);
+    color: var(--surface);
     text-align: center;
     text-decoration: none;
-    padding: 0.9rem;
-    border-top: 1px solid white;
 }
 
 #navigation a:hover,
+#navigation a:focus-visible,
 #navigation .active {
-    background: var(--secondary);
-    color: #000;
+    background-color: var(--secondary);
+    color: var(--text);
     font-weight: 700;
 }
 
@@ -91,9 +102,11 @@ main {
 }
 
 h1 {
-    font-size: 1.6rem;
     margin-bottom: 1rem;
+    font-size: 1.6rem;
 }
+
+/* DIRECTORY PAGE */
 
 .view-buttons {
     display: flex;
@@ -103,18 +116,25 @@ h1 {
 }
 
 .view-buttons button {
-    background: var(--background);
-    color: var(--primary);
-    border: 1px solid var(--primary);
     padding: 0.35rem 1.4rem;
-    cursor: pointer;
+    border: 1px solid var(--primary);
+    background-color: var(--background);
+    color: var(--primary);
+    font: inherit;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .view-buttons button:hover,
+.view-buttons button:focus-visible,
 .view-buttons .active-view {
-    background: var(--secondary);
-    color: #000;
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+.view-buttons button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
 }
 
 .grid-view {
@@ -124,43 +144,43 @@ h1 {
 }
 
 .card {
-    background: white;
+    overflow: hidden;
     border: 1px solid var(--primary);
     border-radius: 7px;
-    overflow: hidden;
+    background-color: var(--surface);
 }
 
 .card h2 {
-    text-align: center;
-    font-size: 1.05rem;
     padding: 0.55rem 0.5rem 0;
+    font-size: 1.05rem;
+    text-align: center;
 }
 
 .tagline {
-    text-align: center;
-    font-size: 0.8rem;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid var(--primary);
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .card-body {
     display: grid;
     grid-template-columns: 100px 1fr;
+    align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    align-items: center;
 }
 
 .card img {
     width: 95px;
     height: 80px;
-    object-fit: cover;
     border: 1px solid var(--primary);
+    object-fit: cover;
 }
 
 .member-info p {
-    font-size: 0.78rem;
     margin-bottom: 0.2rem;
+    font-size: 0.78rem;
 }
 
 .member-info a {
@@ -186,11 +206,13 @@ h1 {
     display: block;
 }
 
+/* FOOTER */
+
 footer {
-    background: var(--primary);
-    color: white;
-    padding: 1.3rem 1rem;
     margin-top: 2rem;
+    padding: 1.3rem 1rem;
+    background-color: var(--primary);
+    color: var(--surface);
     text-align: center;
 }
 
@@ -209,13 +231,17 @@ footer p {
     margin: 1.2rem 0;
 }
 
+.social a:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 4px;
+}
+
 .social img {
     width: 32px;
     height: 32px;
 }
-/* ===============================
-   HOME PAGE
-================================ */
+
+/* HOME PAGE */
 
 .home-main {
     max-width: 1100px;
@@ -224,8 +250,8 @@ footer p {
 }
 
 .home-main > h1 {
-    text-align: center;
     margin: 0.75rem 0 1rem;
+    text-align: center;
 }
 
 /* HERO */
@@ -233,9 +259,9 @@ footer p {
 .hero {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
     margin-bottom: 1.5rem;
-    background: var(--primary);
+    border-radius: 8px;
+    background-color: var(--primary);
 }
 
 .hero > img {
@@ -250,14 +276,14 @@ footer p {
     inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-start;
+    justify-content: flex-end;
     padding: 1.25rem;
-    color: white;
     background: linear-gradient(
         transparent,
-        rgba(31, 78, 61, 0.9)
+        rgb(31 78 61 / 90%)
     );
+    color: var(--surface);
 }
 
 .hero-content h2 {
@@ -273,17 +299,23 @@ footer p {
 .join-button {
     display: inline-block;
     padding: 0.7rem 1.2rem;
-    border: 2px solid white;
+    border: 2px solid var(--surface);
     border-radius: 5px;
-    background: var(--secondary);
-    color: #000;
+    background-color: var(--secondary);
+    color: var(--text);
     font-weight: 700;
     text-decoration: none;
 }
 
-.join-button:hover {
-    background: white;
+.join-button:hover,
+.join-button:focus-visible {
+    background-color: var(--surface);
     color: var(--primary);
+}
+
+.join-button:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
 }
 
 /* EVENTS AND WEATHER */
@@ -298,18 +330,18 @@ footer p {
 .events,
 .weather,
 .spotlights-section {
-    background: white;
+    overflow: hidden;
     border: 1px solid var(--primary);
     border-radius: 7px;
-    overflow: hidden;
+    background-color: var(--surface);
 }
 
 .events > h2,
 .weather > h2,
 .spotlights-section > h2 {
     padding: 0.65rem 1rem;
-    background: var(--primary);
-    color: white;
+    background-color: var(--primary);
+    color: var(--surface);
     font-size: 1.15rem;
 }
 
@@ -347,8 +379,6 @@ footer p {
     object-fit: contain;
 }
 
-
-
 .current-weather p {
     margin-bottom: 0.3rem;
 }
@@ -361,8 +391,8 @@ footer p {
 
 .forecast h3 {
     margin-bottom: 0.75rem;
-    text-align: center;
     font-size: 1rem;
+    text-align: center;
 }
 
 #forecast-container {
@@ -375,8 +405,8 @@ footer p {
     padding: 0.75rem;
     border: 1px solid var(--primary);
     border-radius: 5px;
+    background-color: var(--background);
     text-align: center;
-    background: var(--background);
 }
 
 .forecast-day h4 {
@@ -400,8 +430,8 @@ footer p {
     padding: 1rem;
     border: 1px solid var(--primary);
     border-radius: 6px;
+    background-color: var(--background);
     text-align: center;
-    background: var(--background);
 }
 
 .spotlight-card h3 {
@@ -427,6 +457,7 @@ footer p {
     color: var(--primary);
     font-weight: 700;
 }
+
 /* JOIN PAGE */
 
 .join-main {
@@ -436,8 +467,8 @@ footer p {
 }
 
 .join-main h1 {
-    text-align: center;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .join-layout {
@@ -447,16 +478,16 @@ footer p {
 
 .application-section,
 .membership-section {
-    background: #ffffff;
     padding: 1.25rem;
     border-radius: 8px;
+    background-color: var(--surface);
     box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
 .application-section h2,
 .membership-section h2 {
     margin-top: 0;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .membership-form {
@@ -475,31 +506,74 @@ footer p {
 .membership-form textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #777777;
+    border: 1px solid var(--border);
     border-radius: 5px;
+    background-color: var(--surface);
+    color: var(--text);
     font: inherit;
+}
+
+.membership-form textarea {
+    resize: vertical;
 }
 
 .membership-form input:focus,
 .membership-form select:focus,
 .membership-form textarea:focus {
+    border-color: var(--secondary);
     outline: 3px solid rgb(212 160 23 / 35%);
-    border-color: var(--secondary-color);
 }
 
-.membership-form button {
-    padding: 0.85rem 1rem;
-    border: none;
+.membership-form input:required:valid,
+.membership-form select:required:valid {
+    border-left: 5px solid var(--primary);
+}
+
+.membership-form input:required:invalid,
+.membership-form select:required:invalid {
+    border-left: 5px solid var(--danger);
+}
+
+.membership-form button,
+.modal-button,
+.close-modal {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--primary);
     border-radius: 5px;
-    background: var(--primary-color);
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--surface);
+    font: inherit;
     font-weight: 700;
+    line-height: 1.2;
     cursor: pointer;
 }
 
+.membership-form button {
+    width: 100%;
+}
+
+.modal-button,
+.close-modal {
+    width: auto;
+}
+
 .membership-form button:hover,
-.membership-form button:focus {
-    background: #16392d;
+.membership-form button:focus-visible,
+.modal-button:hover,
+.modal-button:focus-visible,
+.close-modal:hover,
+.close-modal:focus-visible {
+    border-color: var(--primary-dark);
+    background-color: var(--primary-dark);
+    color: var(--surface);
+}
+
+.membership-form button:focus-visible,
+.modal-button:focus-visible,
+.close-modal:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
 }
 
 .membership-cards {
@@ -509,10 +583,10 @@ footer p {
 
 .membership-card {
     padding: 1.25rem;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--secondary);
     border-radius: 8px;
+    background-color: var(--surface);
     text-align: center;
-    background: #ffffff;
     animation: card-arrival 0.8s ease-out both;
 }
 
@@ -530,44 +604,33 @@ footer p {
 
 .membership-card h3 {
     margin-top: 0;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .membership-price {
     font-weight: 700;
 }
 
-.modal-button,
-.close-modal {
-    padding: 0.65rem 1rem;
-    border: none;
-    border-radius: 5px;
-    background: var(--primary-color);
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.modal-button:hover,
-.modal-button:focus,
-.close-modal:hover,
-.close-modal:focus {
-    background: #16392d;
-}
-
 dialog {
     width: min(90%, 500px);
     padding: 1.5rem;
-    border: none;
+    border: 2px solid var(--primary);
     border-radius: 8px;
+    background-color: var(--surface);
+    color: var(--text);
     box-shadow: 0 6px 25px rgb(0 0 0 / 35%);
 }
 
 dialog::backdrop {
-    background: rgb(0 0 0 / 60%);
+    background-color: rgb(0 0 0 / 60%);
 }
 
 dialog h2 {
-    color: var(--primary-color);
+    color: var(--primary);
+}
+
+dialog ul {
+    margin: 1rem 0 1.25rem 1.5rem;
 }
 
 dialog li {
@@ -590,7 +653,9 @@ dialog li {
     .membership-card {
         animation: none;
     }
-}/* THANK YOU PAGE */
+}
+
+/* THANK YOU PAGE */
 
 .thankyou-main {
     max-width: 700px;
@@ -602,7 +667,7 @@ dialog li {
     margin-top: 2rem;
     padding: 1.5rem;
     border-radius: 8px;
-    background: #ffffff;
+    background-color: var(--surface);
     box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
