@@ -12,7 +12,10 @@
     >
     <meta name="author" content="Brain Victor Murara">
 
-    <meta property="og:title" content="Join the Marondera Chamber of Commerce">
+    <meta
+        property="og:title"
+        content="Join the Marondera Chamber of Commerce"
+    >
     <meta property="og:type" content="website">
     <meta
         property="og:description"
@@ -62,12 +65,19 @@
             type="button"
             aria-label="Open navigation menu"
             aria-expanded="false"
+            aria-controls="navigation"
         ></button>
 
-        <nav id="navigation">
+        <nav id="navigation" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="directory.html">Directory</a>
-            <a href="join.html" class="active">Join</a>
+            <a
+                href="join.html"
+                class="active"
+                aria-current="page"
+            >
+                Join
+            </a>
             <a href="discover.html">Discover</a>
         </nav>
     </header>
@@ -111,9 +121,9 @@
                         <input
                             type="text"
                             name="organizationTitle"
-                            title="Enter your organizational title using at least seven letters, spaces, or hyphens"
+                            title="Enter at least seven letters, spaces, or hyphens"
                             autocomplete="organization-title"
-                            pattern="[A-Za-z\s-]{7,}"
+                            pattern="[A-Za-z -]{7,}"
                         >
                     </label>
 
@@ -156,13 +166,24 @@
                         <select
                             name="membership"
                             title="Select a membership level"
+                            autocomplete="off"
                             required
                         >
-                            <option value="">Select a membership level</option>
-                            <option value="np">NP Membership</option>
-                            <option value="bronze">Bronze Membership</option>
-                            <option value="silver">Silver Membership</option>
-                            <option value="gold">Gold Membership</option>
+                            <option value="">
+                                Select a membership level
+                            </option>
+                            <option value="np">
+                                NP Membership
+                            </option>
+                            <option value="bronze">
+                                Bronze Membership
+                            </option>
+                            <option value="silver">
+                                Silver Membership
+                            </option>
+                            <option value="gold">
+                                Gold Membership
+                            </option>
                         </select>
                     </label>
 
@@ -171,6 +192,7 @@
                         <textarea
                             name="description"
                             title="Describe your business or organization"
+                            autocomplete="off"
                             rows="6"
                         ></textarea>
                     </label>
@@ -181,7 +203,10 @@
                         id="timestamp"
                     >
 
-                    <button type="submit">
+                    <button
+                        type="submit"
+                        title="Submit the membership application"
+                    >
                         Apply for Membership
                     </button>
                 </form>
@@ -195,10 +220,13 @@
                         <h3>NP Membership</h3>
                         <p>For nonprofit organizations.</p>
                         <p class="membership-price">No fee</p>
+
                         <button
                             type="button"
                             class="modal-button"
                             data-modal="np-modal"
+                            aria-haspopup="dialog"
+                            title="View NP membership benefits"
                         >
                             View Benefits
                         </button>
@@ -208,10 +236,13 @@
                         <h3>Bronze Membership</h3>
                         <p>Essential support for small businesses.</p>
                         <p class="membership-price">Entry level</p>
+
                         <button
                             type="button"
                             class="modal-button"
                             data-modal="bronze-modal"
+                            aria-haspopup="dialog"
+                            title="View Bronze membership benefits"
                         >
                             View Benefits
                         </button>
@@ -219,12 +250,19 @@
 
                     <article class="membership-card">
                         <h3>Silver Membership</h3>
-                        <p>Additional promotion and training benefits.</p>
-                        <p class="membership-price">Professional level</p>
+                        <p>
+                            Additional promotion and training benefits.
+                        </p>
+                        <p class="membership-price">
+                            Professional level
+                        </p>
+
                         <button
                             type="button"
                             class="modal-button"
                             data-modal="silver-modal"
+                            aria-haspopup="dialog"
+                            title="View Silver membership benefits"
                         >
                             View Benefits
                         </button>
@@ -232,12 +270,17 @@
 
                     <article class="membership-card">
                         <h3>Gold Membership</h3>
-                        <p>Maximum visibility and premium benefits.</p>
+                        <p>
+                            Maximum visibility and premium benefits.
+                        </p>
                         <p class="membership-price">Premium level</p>
+
                         <button
                             type="button"
                             class="modal-button"
                             data-modal="gold-modal"
+                            aria-haspopup="dialog"
+                            title="View Gold membership benefits"
                         >
                             View Benefits
                         </button>
@@ -246,50 +289,130 @@
             </section>
         </div>
 
-        <dialog id="np-modal">
-            <h2>NP Membership Benefits</h2>
+        <dialog
+            id="np-modal"
+            aria-labelledby="np-modal-title"
+        >
+            <h2 id="np-modal-title">
+                NP Membership Benefits
+            </h2>
+
             <ul>
                 <li>No membership fee</li>
                 <li>Access to networking events</li>
-                <li>Community organization directory listing</li>
-                <li>Training and development information</li>
+                <li>
+                    Community organization directory listing
+                </li>
+                <li>
+                    Training and development information
+                </li>
             </ul>
-            <button type="button" class="close-modal">Close</button>
+
+            <button
+                type="button"
+                class="close-modal"
+                title="Close NP membership benefits"
+            >
+                Close
+            </button>
         </dialog>
 
-        <dialog id="bronze-modal">
-            <h2>Bronze Membership Benefits</h2>
+        <dialog
+            id="bronze-modal"
+            aria-labelledby="bronze-modal-title"
+        >
+            <h2 id="bronze-modal-title">
+                Bronze Membership Benefits
+            </h2>
+
             <ul>
                 <li>Business directory listing</li>
-                <li>Access to chamber networking events</li>
+                <li>
+                    Access to chamber networking events
+                </li>
                 <li>Member training opportunities</li>
-                <li>Discounts on selected chamber events</li>
+                <li>
+                    Discounts on selected chamber events
+                </li>
             </ul>
-            <button type="button" class="close-modal">Close</button>
+
+            <button
+                type="button"
+                class="close-modal"
+                title="Close Bronze membership benefits"
+            >
+                Close
+            </button>
         </dialog>
 
-        <dialog id="silver-modal">
-            <h2>Silver Membership Benefits</h2>
+        <dialog
+            id="silver-modal"
+            aria-labelledby="silver-modal-title"
+        >
+            <h2 id="silver-modal-title">
+                Silver Membership Benefits
+            </h2>
+
             <ul>
-                <li>All Bronze membership benefits</li>
-                <li>Priority access to training workshops</li>
-                <li>Enhanced business directory listing</li>
-                <li>Discounted advertising opportunities</li>
-                <li>Occasional homepage spotlight placement</li>
+                <li>
+                    All Bronze membership benefits
+                </li>
+                <li>
+                    Priority access to training workshops
+                </li>
+                <li>
+                    Enhanced business directory listing
+                </li>
+                <li>
+                    Discounted advertising opportunities
+                </li>
+                <li>
+                    Occasional homepage spotlight placement
+                </li>
             </ul>
-            <button type="button" class="close-modal">Close</button>
+
+            <button
+                type="button"
+                class="close-modal"
+                title="Close Silver membership benefits"
+            >
+                Close
+            </button>
         </dialog>
 
-        <dialog id="gold-modal">
-            <h2>Gold Membership Benefits</h2>
+        <dialog
+            id="gold-modal"
+            aria-labelledby="gold-modal-title"
+        >
+            <h2 id="gold-modal-title">
+                Gold Membership Benefits
+            </h2>
+
             <ul>
-                <li>All Silver membership benefits</li>
-                <li>Premium business directory listing</li>
-                <li>Priority homepage spotlight placement</li>
-                <li>Major event sponsorship opportunities</li>
-                <li>Maximum event and training discounts</li>
+                <li>
+                    All Silver membership benefits
+                </li>
+                <li>
+                    Premium business directory listing
+                </li>
+                <li>
+                    Priority homepage spotlight placement
+                </li>
+                <li>
+                    Major event sponsorship opportunities
+                </li>
+                <li>
+                    Maximum event and training discounts
+                </li>
             </ul>
-            <button type="button" class="close-modal">Close</button>
+
+            <button
+                type="button"
+                class="close-modal"
+                title="Close Gold membership benefits"
+            >
+                Close
+            </button>
         </dialog>
     </main>
 
@@ -307,13 +430,14 @@
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="Facebook"
+                aria-label="Visit our Facebook page"
             >
                 <img
                     src="images/facebook.svg"
                     alt="Facebook icon"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
 
@@ -321,13 +445,14 @@
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="LinkedIn"
+                aria-label="Visit our LinkedIn page"
             >
                 <img
                     src="images/linkedin.svg"
                     alt="LinkedIn icon"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
 
@@ -335,13 +460,14 @@
                 href="https://github.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="GitHub"
+                aria-label="Visit our GitHub page"
             >
                 <img
                     src="images/github.svg"
                     alt="GitHub icon"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
         </div>

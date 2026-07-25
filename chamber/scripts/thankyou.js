@@ -1,19 +1,44 @@
 const params = new URLSearchParams(window.location.search);
 
-document.querySelector("#firstName").textContent =
-    params.get("firstName") || "";
+const getValue = (key) => params.get(key) || "";
 
-document.querySelector("#lastName").textContent =
-    params.get("lastName") || "";
+document.querySelector("#firstName").textContent = getValue("firstName");
+document.querySelector("#lastName").textContent = getValue("lastName");
+document.querySelector("#email").textContent = getValue("email");
+document.querySelector("#phone").textContent = getValue("phone");
+document.querySelector("#organization").textContent = getValue("organization");
 
-document.querySelector("#email").textContent =
-    params.get("email") || "";
+const timestamp = getValue("timestamp");
 
-document.querySelector("#phone").textContent =
-    params.get("phone") || "";
+if (timestamp) {
+    const date = new Date(timestamp);
 
-document.querySelector("#organization").textContent =
-    params.get("organization") || "";
+    document.querySelector("#timestampDisplay").textContent =
+        date.toLocaleString(undefined, {
+            dateStyle: "full",
+            timeStyle: "medium"
+        });
+} else {
+    document.querySelector("#timestampDisplay").textContent = "";
+}
 
-document.querySelector("#timestampDisplay").textContent =
-    params.get("timestamp") || "";
+/* MOBILE NAVIGATION */
+
+const menuButton = document.querySelector("#menu-button");
+const navigation = document.querySelector("#navigation");
+
+if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+        navigation.classList.toggle("open");
+
+        const isOpen = navigation.classList.contains("open");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+    });
+}
