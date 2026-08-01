@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Marondera Chamber of Commerce Home</title>
+    <title>Discover Marondera | Marondera Chamber of Commerce</title>
 
     <meta
         name="description"
-        content="Discover Marondera businesses, community events, local weather, and chamber member spotlights."
+        content="Discover places of interest, attractions, institutions, and community features in Marondera, Zimbabwe."
     >
     <meta name="author" content="Brain Victor Murara">
 
-    <meta property="og:title" content="Marondera Chamber of Commerce Home">
+    <meta property="og:title" content="Discover Marondera">
     <meta property="og:type" content="website">
     <meta
         property="og:description"
-        content="Connect with Marondera businesses, community events, and chamber members."
+        content="Explore places of interest, attractions, and community features in Marondera, Zimbabwe."
     >
     <meta
         property="og:image"
@@ -24,10 +24,10 @@
     >
     <meta
         property="og:url"
-        content="https://brainvictormurara.github.io/wdd231/chamber/index.html"
+        content="https://brainvictormurara.github.io/wdd231/chamber/discover.html"
     >
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/dates.js" defer></script>
-    <script src="scripts/home.js" defer></script>
+    <script type="module" src="scripts/discover.js"></script>
 </head>
 
 <body>
@@ -61,107 +61,46 @@
             type="button"
             aria-label="Open navigation menu"
             aria-expanded="false"
+            aria-controls="navigation"
         ></button>
 
-        <nav id="navigation">
-    <a href="index.html">Home</a>
-    <a href="directory.html">Directory</a>
-    <a href="join.html">Join</a>
-    <a href="discover.html" class="active">Discover</a>
-</nav>
+        <nav id="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+            <a
+                href="discover.html"
+                class="active"
+                aria-current="page"
+            >Discover</a>
+        </nav>
     </header>
 
-    <main class="home-main">
+    <main class="discover-main">
         <h1>Discover Marondera</h1>
 
-        <section class="hero">
-            <img
-                src="images/fb-image.webp"
-                alt="View of Marondera and the Chamber of Commerce"
-                width="1200"
-                height="630"
-            >
-
-            <div class="hero-content">
-                <h2>Connect. Support. Grow.</h2>
-                <p>
-                    Supporting local businesses and building a stronger
-                    Marondera community.
-                </p>
-                <a class="join-button" href="join.html">Join the Chamber</a>
-            </div>
-        </section>
-
-        <div class="home-information">
-            <section class="events">
-                <h2>Current Events</h2>
-
-                <article>
-                    <h3>Marondera Business Networking Breakfast</h3>
-                    <p><strong>Date:</strong> 25 July 2026</p>
-                    <p><strong>Time:</strong> 8:00 a.m.</p>
-                    <p><strong>Venue:</strong> Marondera Hotel</p>
-                    <p>
-                        Meet local business owners, exchange ideas, and build
-                        valuable partnerships.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>Community Development Workshop</h3>
-                    <p><strong>Date:</strong> 1 August 2026</p>
-                    <p><strong>Time:</strong> 10:00 a.m.</p>
-                    <p><strong>Venue:</strong> Marondera Civic Centre</p>
-                    <p>
-                        Learn about business growth, community development,
-                        and local investment opportunities.
-                    </p>
-                </article>
-            </section>
-
-            <section class="weather">
-                <h2>Marondera Weather</h2>
-<div class="current-weather">
-    <img
-        id="weather-icon"
-        alt="Current weather"
-        width="80"
-        height="80"
-    >
-
-    <div>
-        <p>
-            <strong>Temperature:</strong>
-            <span id="current-temp">Loading...</span>
+        <p class="discover-introduction">
+            Explore some of the places, institutions, attractions,
+            and community features that make Marondera a unique place
+            to live, visit, and conduct business.
         </p>
 
-        <p>
-            <strong>Conditions:</strong>
-            <span id="weather-description">Loading...</span>
-        </p>
-    </div>
-</div>
+        <aside
+            id="visitor-message"
+            class="visitor-message"
+            aria-live="polite"
+        ></aside>
 
-                <div class="forecast">
-                    <h3>Three-Day Forecast</h3>
-
-                    <div id="forecast-container">
-                        <p>Loading weather forecast...</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <section class="spotlights-section">
-            <h2>Member Spotlights</h2>
+        <section
+            class="discover-section"
+            aria-labelledby="places-heading"
+        >
+            <h2 id="places-heading">Places of Interest</h2>
 
             <div
-                id="spotlights"
-                class="spotlights"
-                aria-label="Featured chamber members"
-            >
-                <p>Loading chamber member spotlights...</p>
-            </div>
+                id="discover-cards"
+                class="discover-grid"
+            ></div>
         </section>
     </main>
 
@@ -179,13 +118,14 @@
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="Facebook"
+                aria-label="Visit our Facebook page"
             >
                 <img
                     src="images/facebook.svg"
-                    alt="Facebook icon"
+                    alt="Facebook"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
 
@@ -193,13 +133,14 @@
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="LinkedIn"
+                aria-label="Visit our LinkedIn page"
             >
                 <img
                     src="images/linkedin.svg"
-                    alt="LinkedIn icon"
+                    alt="LinkedIn"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
 
@@ -207,31 +148,33 @@
                 href="https://github.com"
                 target="_blank"
                 rel="noopener"
-                aria-label="GitHub"
+                aria-label="Visit our GitHub page"
             >
                 <img
                     src="images/github.svg"
-                    alt="GitHub icon"
+                    alt="GitHub"
                     width="32"
                     height="32"
+                    loading="lazy"
                 >
             </a>
         </div>
 
-        <section>
+        <div class="footer-info">
             <p>WDD 231 Class Project</p>
             <p>Brain Victor Murara</p>
             <p>Marondera, Zimbabwe</p>
+
             <p>
-                &copy;
-                <span id="currentyear"></span>
+                &copy; <span id="currentyear"></span>
                 Marondera Chamber of Commerce
             </p>
+
             <p>
                 Last Modification:
                 <span id="lastmodified"></span>
             </p>
-        </section>
+        </div>
     </footer>
 </body>
-</html>a
+</html>
