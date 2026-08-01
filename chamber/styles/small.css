@@ -674,3 +674,110 @@ dialog li {
 .submission-details p {
     margin: 0.8rem 0;
 }
+/* Discover page */
+
+.discover-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.discover-main h1,
+.discover-section > h2 {
+    text-align: center;
+}
+
+.discover-introduction {
+    max-width: 750px;
+    margin: 0 auto 1rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.visitor-message {
+    max-width: 750px;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-left: 5px solid #d4a017;
+    border-radius: 6px;
+    background-color: #e8f0ec;
+    color: #163b2f;
+    font-weight: 700;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.discover-card {
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "address"
+        "description"
+        "button";
+    gap: 0.75rem;
+    overflow: hidden;
+    padding: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+.discover-card h2 {
+    grid-area: name;
+    margin: 0;
+    color: #1f4e3d;
+    text-align: left;
+}
+
+.discover-card figure {
+    grid-area: image;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.discover-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.discover-card address {
+    grid-area: address;
+    color: #333333;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.discover-card p {
+    grid-area: description;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.discover-card button {
+    grid-area: button;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #1f4e3d;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.discover-card button:focus-visible {
+    outline: 3px solid #d4a017;
+    outline-offset: 3px;
+}

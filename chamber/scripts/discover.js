@@ -1,12 +1,28 @@
-import { places } from "../data/discover.mjs";
-
 const cardsContainer = document.querySelector("#discover-cards");
 const visitorMessage = document.querySelector("#visitor-message");
 
-function displayPlaces(placeList) {
+async function getPlaces() {
+    try {
+        const response = await fetch("data/places.json");
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        displayPlaces(data.places);
+    } catch (error) {
+        console.error("Unable to load the places:", error);
+
+        cardsContainer.innerHTML =
+            "<p>Sorry, the places of interest could not be loaded.</p>";
+    }
+}
+
+function displayPlaces(places) {
     cardsContainer.innerHTML = "";
 
-    placeList.forEach((place) => {
+    places.forEach((place) => {
         const card = document.createElement("article");
         const title = document.createElement("h2");
         const figure = document.createElement("figure");
@@ -66,7 +82,6 @@ function displayVisitorMessage() {
             "Welcome! Let us know if you have any questions.";
     } else {
         const millisecondsPerDay = 1000 * 60 * 60 * 24;
-
         const daysBetweenVisits = Math.floor(
             (currentVisit - previousVisit) / millisecondsPerDay
         );
@@ -89,5 +104,5 @@ function displayVisitorMessage() {
     );
 }
 
-displayPlaces(places);
+getPlaces();
 displayVisitorMessage();
