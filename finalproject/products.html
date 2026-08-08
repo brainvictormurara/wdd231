@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Chospex Chemicals</title>
+
+    <meta name="description"
+          content="Browse industrial chemicals and laboratory reagents available from Chospex.">
+
+    <meta name="author" content="Brain Victor Murara">
+
+    <meta property="og:title" content="Chospex Chemical Products">
+    <meta property="og:description"
+          content="Browse industrial chemicals and laboratory reagents from Chospex.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.webp">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/products.js"></script>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+
+        <a class="brand" href="index.html">
+            <img src="images/logo.webp"
+                 alt="Chospex logo"
+                 width="60"
+                 height="60">
+            <span>Chospex</span>
+        </a>
+
+        <button id="menu-button"
+                class="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-heading">
+        <h1>Our Products</h1>
+
+        <p>
+            Browse our range of industrial chemicals and
+            laboratory reagents.
+        </p>
+    </section>
+
+    <section class="product-section section-container">
+
+        <div class="product-controls">
+
+            <label for="category-filter">
+                Filter Products
+            </label>
+
+            <select id="category-filter">
+                <option value="all">All Products</option>
+                <option value="industrial">
+                    Industrial Chemicals
+                </option>
+                <option value="laboratory">
+                    Laboratory Reagents
+                </option>
+            </select>
+
+        </div>
+
+        <p id="product-count" aria-live="polite"></p>
+
+        <div id="product-container" class="product-grid">
+        </div>
+
+    </section>
+
+</main>
+
+<dialog id="product-dialog">
+
+    <div class="dialog-content">
+
+        <button id="close-dialog"
+                class="close-dialog"
+                aria-label="Close product information">
+            ×
+        </button>
+
+        <h2 id="dialog-name"></h2>
+
+        <p>
+            <strong>Category:</strong>
+            <span id="dialog-category"></span>
+        </p>
+
+        <p>
+            <strong>Grade:</strong>
+            <span id="dialog-grade"></span>
+        </p>
+
+        <p>
+            <strong>Packaging:</strong>
+            <span id="dialog-packaging"></span>
+        </p>
+
+        <p id="dialog-description"></p>
+
+        <a href="contact.html" class="primary-button">
+            Request a Quote
+        </a>
+
+    </div>
+
+</dialog>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Chospex</h2>
+            <p>Industrial & Laboratory Chemicals</p>
+        </div>
+
+        <div>
+            <p>
+                <a href="attributions.html">Attributions</a>
+            </p>
+
+            <p>
+                <a href="https://www.loom.com/share/c1618f40471d45b9b004d4e229e746e5" class="video-link">
+                    Project Demonstration Video
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span class="current-year"></span>
+        Chospex (Pvt) Ltd | Brain Victor Murara | WDD 231
+    </p>
+
+</footer>
+
+</body>
+</html>

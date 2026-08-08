@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact & Request a Quote | Chospex</title>
+
+    <meta name="description"
+          content="Contact Chospex or request a quotation for industrial chemicals and laboratory reagents.">
+
+    <meta name="author" content="Brain Victor Murara">
+
+    <meta property="og:title" content="Contact Chospex">
+    <meta property="og:description"
+          content="Request information or a quotation from Chospex.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.webp">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script type="module" src="scripts/main.js"></script>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <a class="brand" href="index.html">
+            <img src="images/logo.webp"
+                 alt="Chospex logo"
+                 width="60"
+                 height="60">
+
+            <span>Chospex</span>
+        </a>
+
+        <button id="menu-button"
+                class="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<main>
+
+    <section class="page-heading">
+        <h1>Contact Chospex</h1>
+
+        <p>
+            Request information or a quotation for the chemical
+            products you require.
+        </p>
+    </section>
+
+    <div class="contact-layout section-container">
+
+        <section class="contact-information">
+
+            <h2>Contact Information</h2>
+
+            <p>
+                Complete the quotation form and provide as much
+                information as possible about the product you require.
+            </p>
+
+            <h3>Business Enquiries</h3>
+
+            <p>
+                Chospex (Pvt) Ltd<br>
+                Industrial & Laboratory Chemicals
+            </p>
+
+        </section>
+
+        <section class="form-section">
+
+            <h2>Request a Quote</h2>
+
+            <form method="get"
+                  action="form-response.html">
+
+                <label for="first-name">
+                    First Name
+                    <input type="text"
+                           id="first-name"
+                           name="firstname"
+                           autocomplete="given-name"
+                           required>
+                </label>
+
+                <label for="last-name">
+                    Last Name
+                    <input type="text"
+                           id="last-name"
+                           name="lastname"
+                           autocomplete="family-name"
+                           required>
+                </label>
+
+                <label for="email">
+                    Email Address
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           autocomplete="email"
+                           required>
+                </label>
+
+                <label for="phone">
+                    Phone Number
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           autocomplete="tel">
+                </label>
+
+                <label for="company">
+                    Company / Organization
+                    <input type="text"
+                           id="company"
+                           name="company"
+                           autocomplete="organization">
+                </label>
+
+                <label for="product">
+                    Product Required
+                    <input type="text"
+                           id="product"
+                           name="product"
+                           required>
+                </label>
+
+                <label for="quantity">
+                    Quantity Required
+                    <input type="text"
+                           id="quantity"
+                           name="quantity"
+                           required>
+                </label>
+
+                <label for="message">
+                    Additional Information
+                    <textarea id="message"
+                              name="message"
+                              rows="6"></textarea>
+                </label>
+
+                <input type="hidden"
+                       id="timestamp"
+                       name="timestamp">
+
+                <button type="submit"
+                        class="primary-button">
+                    Submit Quote Request
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Chospex</h2>
+            <p>Industrial & Laboratory Chemicals</p>
+        </div>
+
+        <div>
+            <p>
+                <a href="attributions.html">Attributions</a>
+            </p>
+
+            <p>
+                <a href="https://www.loom.com/share/c1618f40471d45b9b004d4e229e746e5" class="video-link">
+                    Project Demonstration Video
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span class="current-year"></span>
+        Chospex (Pvt) Ltd | Brain Victor Murara | WDD 231
+    </p>
+
+</footer>
+
+</body>
+</html>

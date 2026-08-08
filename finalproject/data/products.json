@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "name": "Hydrochloric Acid",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "25 L",
+        "description": "Used in industrial cleaning, processing, and pH control applications."
+    },
+    {
+        "id": 2,
+        "name": "Sulphuric Acid",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "25 L",
+        "description": "A widely used industrial chemical for processing and manufacturing applications."
+    },
+    {
+        "id": 3,
+        "name": "Sodium Hydroxide",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "25 kg",
+        "description": "Used in cleaning, manufacturing, water treatment, and chemical processing."
+    },
+    {
+        "id": 4,
+        "name": "Hydrogen Peroxide",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "20 L",
+        "description": "Used as an oxidizing and cleaning agent in various industrial processes."
+    },
+    {
+        "id": 5,
+        "name": "Sodium Hypochlorite",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "20 L",
+        "description": "Commonly used for sanitation, disinfection, and water treatment."
+    },
+    {
+        "id": 6,
+        "name": "Calcium Hypochlorite",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "25 kg",
+        "description": "A chlorine-based product commonly used for water treatment and sanitation."
+    },
+    {
+        "id": 7,
+        "name": "Sodium Carbonate",
+        "category": "industrial",
+        "grade": "Industrial Grade",
+        "packaging": "25 kg",
+        "description": "Used in manufacturing, cleaning, water treatment, and chemical processing."
+    },
+    {
+        "id": 8,
+        "name": "Citric Acid",
+        "category": "industrial",
+        "grade": "Commercial Grade",
+        "packaging": "25 kg",
+        "description": "Used in cleaning, processing, formulation, and pH adjustment."
+    },
+    {
+        "id": 9,
+        "name": "Sodium Chloride",
+        "category": "laboratory",
+        "grade": "Analytical Grade",
+        "packaging": "500 g",
+        "description": "Laboratory reagent suitable for preparation of solutions and analytical procedures."
+    },
+    {
+        "id": 10,
+        "name": "Copper Sulphate",
+        "category": "laboratory",
+        "grade": "Analytical Grade",
+        "packaging": "500 g",
+        "description": "A laboratory chemical used in analytical and educational applications."
+    },
+    {
+        "id": 11,
+        "name": "Potassium Permanganate",
+        "category": "laboratory",
+        "grade": "Analytical Grade",
+        "packaging": "500 g",
+        "description": "An oxidizing reagent used in laboratory analysis and solution preparation."
+    },
+    {
+        "id": 12,
+        "name": "Ethanol",
+        "category": "laboratory",
+        "grade": "Laboratory Grade",
+        "packaging": "2.5 L",
+        "description": "A laboratory solvent used in preparation, cleaning, and analytical procedures."
+    },
+    {
+        "id": 13,
+        "name": "Methanol",
+        "category": "laboratory",
+        "grade": "Laboratory Grade",
+        "packaging": "2.5 L",
+        "description": "A laboratory solvent intended for controlled analytical applications."
+    },
+    {
+        "id": 14,
+        "name": "Acetic Acid",
+        "category": "laboratory",
+        "grade": "Analytical Grade",
+        "packaging": "2.5 L",
+        "description": "Used in laboratory solution preparation and analytical procedures."
+    },
+    {
+        "id": 15,
+        "name": "Ammonium Hydroxide",
+        "category": "laboratory",
+        "grade": "Analytical Grade",
+        "packaging": "2.5 L",
+        "description": "A laboratory reagent used for analytical testing and solution preparation."
+    },
+    {
+        "id": 16,
+        "name": "Calcium Carbonate",
+        "category": "laboratory",
+        "grade": "Laboratory Grade",
+        "packaging": "500 g",
+        "description": "Used in laboratory demonstrations, preparation, and analytical procedures."
+    }
+]
